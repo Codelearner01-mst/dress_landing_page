@@ -46,7 +46,7 @@ products.addEventListener("click", (event) => {
     const productId = parseInt(productCard.id.split("-")[1]);
     const product = findProductById(productId);
     const whatsappMessage = `Hello! I'm interested in the ${product.name} priced at $${product.price}. Could you provide more details?`;
-    const whatsappUrl = `https://wa.me/233246096278?text=${encodeURIComponent(whatsappMessage)}`;
+    const whatsappUrl = `https://wa.me/2347040314485?text=${encodeURIComponent(whatsappMessage)}`;
     window.open(whatsappUrl, "_blank");
   } else {
     return;
