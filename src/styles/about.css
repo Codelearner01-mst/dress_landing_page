@@ -1,0 +1,351 @@
+/* ============================================
+   ABOUT.CSS — About page styles
+   ============================================ */
+
+/* ── Page Hero ── */
+.page-hero {
+  background: var(--ink);
+  padding: 120px 0 80px;
+  text-align: center;
+  position: relative;
+  overflow: hidden;
+}
+
+.page-hero::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: radial-gradient(ellipse at 60% 40%, rgba(192,25,90,0.2) 0%, transparent 60%);
+  pointer-events: none;
+}
+
+.page-hero-inner {
+  position: relative;
+  z-index: 1;
+}
+
+.page-hero .tag {
+  background: rgba(192,25,90,0.2);
+  color: var(--rose-light);
+  margin-bottom: 20px;
+}
+
+.page-hero h1 {
+  font-size: clamp(2.5rem, 6vw, 4.5rem);
+  color: var(--white);
+  line-height: 1.1;
+  margin-bottom: 20px;
+}
+
+.page-hero h1 em {
+  font-style: italic;
+  color: var(--rose);
+}
+
+.page-hero p {
+  font-size: 1.1rem;
+  color: rgba(255,255,255,0.6);
+  max-width: 520px;
+  margin: 0 auto;
+  line-height: 1.7;
+}
+
+/* ── Story Section ── */
+.story-section {
+  padding: 100px 0;
+  background: var(--white);
+}
+
+.story-inner {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 60px;
+  align-items: center;
+}
+
+.story-image-wrap {
+  position: relative;
+}
+
+.story-image-frame {
+  border-radius: var(--radius-md);
+  overflow: hidden;
+  aspect-ratio: 4/5;
+  background: var(--blush);
+}
+
+.story-image-frame img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.story-img-placeholder {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  background: linear-gradient(145deg, var(--blush), var(--rose-light));
+  gap: 16px;
+}
+
+.story-img-placeholder i {
+  font-size: 3.5rem;
+  color: var(--rose);
+  opacity: 0.5;
+}
+
+.story-img-placeholder span {
+  font-size: 0.8rem;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  color: var(--rose);
+  opacity: 0.6;
+}
+
+.story-accent-box {
+  position: absolute;
+  bottom: -24px;
+  right: -20px;
+  background: var(--rose);
+  color: var(--white);
+  padding: 24px 28px;
+  border-radius: var(--radius-md);
+  box-shadow: var(--shadow-lg);
+}
+
+.story-accent-number {
+  font-family: 'Playfair Display', serif;
+  font-size: 2.5rem;
+  font-weight: 900;
+  line-height: 1;
+}
+
+.story-accent-label {
+  font-size: 0.75rem;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  opacity: 0.85;
+  margin-top: 4px;
+}
+
+.story-text .tag {
+  margin-bottom: 20px;
+}
+
+.story-text h2 {
+  font-size: clamp(1.8rem, 3.5vw, 2.8rem);
+  margin-bottom: 20px;
+}
+
+.story-text p {
+  color: var(--ink-soft);
+  line-height: 1.8;
+  margin-bottom: 16px;
+  font-size: 1rem;
+}
+
+.story-quote {
+  border-left: 3px solid var(--rose);
+  padding: 16px 24px;
+  margin: 32px 0;
+  background: var(--blush);
+  border-radius: 0 var(--radius-sm) var(--radius-sm) 0;
+}
+
+.story-quote p {
+  font-family: 'Playfair Display', serif;
+  font-style: italic;
+  font-size: 1.15rem;
+  color: var(--ink-mid);
+  margin: 0 0 8px;
+}
+
+.story-quote cite {
+  font-size: 0.8rem;
+  font-style: normal;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--rose);
+}
+
+/* ── Values Section ── */
+.values-section {
+  padding: 100px 0;
+  background: var(--cream);
+}
+
+.values-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 24px;
+  margin-top: 64px;
+}
+
+.value-card {
+  padding: 36px;
+  background: var(--white);
+  border-radius: var(--radius-md);
+  box-shadow: var(--shadow-sm);
+  border-bottom: 3px solid transparent;
+  transition: all var(--transition);
+}
+
+.value-card:hover {
+  border-bottom-color: var(--rose);
+  transform: translateY(-4px);
+  box-shadow: var(--shadow-md);
+}
+
+.value-icon {
+  width: 56px;
+  height: 56px;
+  background: var(--rose-light);
+  border-radius: 14px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--rose);
+  font-size: 1.3rem;
+  margin-bottom: 20px;
+}
+
+.value-card h3 {
+  font-size: 1.15rem;
+  margin-bottom: 10px;
+}
+
+.value-card p {
+  color: var(--ink-soft);
+  font-size: 0.92rem;
+  line-height: 1.7;
+}
+
+/* ── Team Section ── */
+.team-section {
+  padding: 100px 0;
+  background: var(--white);
+}
+
+.team-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 32px;
+  margin-top: 64px;
+}
+
+.team-card {
+  text-align: center;
+}
+
+.team-photo {
+  width: 160px;
+  height: 160px;
+  border-radius: 50%;
+  overflow: hidden;
+  margin: 0 auto 20px;
+  background: var(--blush);
+  border: 4px solid var(--rose-light);
+}
+
+.team-photo img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.team-photo-placeholder {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: linear-gradient(145deg, var(--blush), var(--rose-light));
+}
+
+.team-photo-placeholder i {
+  font-size: 3rem;
+  color: var(--rose);
+  opacity: 0.5;
+}
+
+.team-card h3 {
+  font-size: 1.15rem;
+  margin-bottom: 4px;
+}
+
+.team-card .team-role {
+  font-size: 0.8rem;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--rose);
+  margin-bottom: 12px;
+}
+
+.team-card p {
+  font-size: 0.9rem;
+  color: var(--ink-soft);
+  line-height: 1.6;
+  max-width: 240px;
+  margin: 0 auto;
+}
+
+/* ── Stats Banner ── */
+.stats-banner {
+  background: var(--rose);
+  padding: 72px 0;
+}
+
+.stats-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 48px;
+  text-align: center;
+}
+
+.stat-item-number {
+  font-family: 'Playfair Display', serif;
+  font-size: 3rem;
+  font-weight: 900;
+  color: var(--white);
+  line-height: 1;
+}
+
+.stat-item-label {
+  font-size: 0.8rem;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  color: rgba(255,255,255,0.7);
+  margin-top: 8px;
+}
+
+/* ── Responsive ── */
+@media (min-width: 640px) {
+  .values-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .team-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .stats-grid {
+    grid-template-columns: repeat(4, 1fr);
+  }
+}
+
+@media (min-width: 1024px) {
+  .story-inner {
+    grid-template-columns: 1fr 1fr;
+  }
+
+  .values-grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+
+  .team-grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}

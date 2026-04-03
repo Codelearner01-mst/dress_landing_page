@@ -1,0 +1,554 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Dresses — NoamiDress</title>
+    <link rel="stylesheet" href="../styles/base.css" />
+    <link rel="stylesheet" href="../styles/dresses.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
+    />
+  </head>
+  <body>
+    <!-- ══ NAVIGATION ══ -->
+    <nav class="site-nav" id="site-nav">
+      <div class="nav-inner">
+        <a href="../../index.html" class="nav-logo">
+          <span class="nav-logo-name">NoamiDress</span>
+          <span class="nav-logo-tagline">Dress Like a Queen</span>
+        </a>
+
+        <ul class="nav-links">
+          <li><a href="../../index.html">Home</a></li>
+          <li><a href="../pages/about.html">About</a></li>
+          <li><a href="../pages/dresses.html" class="active">Dresses</a></li>
+          <li><a href="../pages/contact.html">Contact</a></li>
+          <li>
+            <a
+              href="https://wa.me/233000000000"
+              target="_blank"
+              rel="noopener"
+              class="nav-cta"
+            >
+              <i class="fa-brands fa-whatsapp"></i> WhatsApp
+            </a>
+          </li>
+        </ul>
+
+        <button
+          class="nav-hamburger"
+          id="nav-hamburger"
+          aria-label="Toggle menu"
+          aria-expanded="false"
+        >
+          <span></span><span></span><span></span>
+        </button>
+      </div>
+    </nav>
+
+    <!-- Mobile Drawer -->
+    <div class="nav-mobile-drawer" id="nav-mobile-drawer">
+      <a href="../../index.html">Home</a>
+      <a href="../pages/about.html">About</a>
+      <a href="../pages/dresses.html" class="active">Dresses</a>
+      <a href="../pages/contact.html">Contact</a>
+      <a href="https://wa.me/233000000000" target="_blank" rel="noopener">
+        <i class="fa-brands fa-whatsapp"></i> WhatsApp Us
+      </a>
+    </div>
+
+    <!-- ══ PAGE HERO ══ -->
+    <div class="page-offset"></div>
+    <div class="page-hero">
+      <div class="section-wrap page-hero-inner">
+        <span class="tag">Our Collection</span>
+        <h1>All Dresses</h1>
+        <p>
+          From cocktail nights to sun-soaked afternoons — find your perfect
+          dress here.
+        </p>
+      </div>
+    </div>
+
+    <!-- ══ FILTER BAR ══ -->
+    <div class="filter-bar">
+      <div class="section-wrap filter-inner">
+        <div class="filter-pills">
+          <button
+            class="filter-pill active"
+            onclick="filterDresses('all', this)"
+          >
+            All
+          </button>
+          <button class="filter-pill" onclick="filterDresses('cocktail', this)">
+            Cocktail
+          </button>
+          <button class="filter-pill" onclick="filterDresses('summer', this)">
+            Summer
+          </button>
+          <button class="filter-pill" onclick="filterDresses('evening', this)">
+            Evening Gowns
+          </button>
+          <button class="filter-pill" onclick="filterDresses('luxury', this)">
+            Luxury
+          </button>
+        </div>
+        <div class="filter-sort">
+          <span>Sort:</span>
+          <select>
+            <option>Featured</option>
+            <option>Price: Low to High</option>
+            <option>Price: High to Low</option>
+            <option>Newest</option>
+          </select>
+        </div>
+      </div>
+    </div>
+
+    <!-- ══ SHOP GRID ══ -->
+    <section class="shop-section">
+      <div class="section-wrap">
+        <div class="results-info">
+          <p>Showing <span id="results-count">8</span> dresses</p>
+        </div>
+
+        <div class="shop-grid" id="shop-grid">
+          <!-- Dress 1 -->
+          <div class="product-card" data-category="cocktail">
+            <div class="product-img-wrap">
+              <img
+                src="images/black_cocktail_dress.png"
+                alt="Sleek Black Cocktail Dress"
+                onerror="
+                  this.parentElement.innerHTML =
+                    '<div class=\'product-img-placeholder\'><i class=\'fa-solid fa-shirt\'></i><span>Cocktail Dress</span></div>'
+                "
+              />
+              <span class="product-badge">Popular</span>
+              <button class="product-wishlist" onclick="toggleWishlist(this)">
+                <i class="fa-regular fa-heart"></i>
+              </button>
+            </div>
+            <div class="product-info">
+              <div class="product-category">Cocktail</div>
+              <h3>Black Cocktail Dress</h3>
+              <div class="product-meta">
+                <div><span class="product-price">$89</span></div>
+                <div class="product-rating">
+                  <i class="fa-solid fa-star"></i
+                  ><i class="fa-solid fa-star"></i>
+                  <i class="fa-solid fa-star"></i
+                  ><i class="fa-solid fa-star"></i>
+                  <i class="fa-solid fa-star"></i><span>(42)</span>
+                </div>
+              </div>
+              <div class="product-sizes">
+                <span class="size-chip">XS</span>
+                <span class="size-chip active">S</span>
+                <span class="size-chip">M</span>
+                <span class="size-chip">L</span>
+                <span class="size-chip">XL</span>
+              </div>
+              <button
+                class="product-btn"
+                onclick="orderOnWa('Black Cocktail Dress', '$89')"
+              >
+                <i class="fa-brands fa-whatsapp"></i> Order on WhatsApp
+              </button>
+            </div>
+          </div>
+
+          <!-- Dress 2 -->
+          <div class="product-card" data-category="summer">
+            <div class="product-img-wrap">
+              <img
+                src="images/white_summer_dress.png"
+                alt="White Summer Dress"
+                onerror="
+                  this.parentElement.innerHTML =
+                    '<div class=\'product-img-placeholder\'><i class=\'fa-solid fa-shirt\'></i><span>Summer Dress</span></div>'
+                "
+              />
+              <span class="product-badge new">New</span>
+              <button class="product-wishlist" onclick="toggleWishlist(this)">
+                <i class="fa-regular fa-heart"></i>
+              </button>
+            </div>
+            <div class="product-info">
+              <div class="product-category">Summer</div>
+              <h3>White Summer Dress</h3>
+              <div class="product-meta">
+                <div><span class="product-price">$55</span></div>
+                <div class="product-rating">
+                  <i class="fa-solid fa-star"></i
+                  ><i class="fa-solid fa-star"></i>
+                  <i class="fa-solid fa-star"></i
+                  ><i class="fa-solid fa-star"></i>
+                  <i class="fa-regular fa-star"></i><span>(28)</span>
+                </div>
+              </div>
+              <div class="product-sizes">
+                <span class="size-chip">S</span>
+                <span class="size-chip active">M</span>
+                <span class="size-chip">L</span>
+                <span class="size-chip">XL</span>
+              </div>
+              <button
+                class="product-btn"
+                onclick="orderOnWa('White Summer Dress', '$55')"
+              >
+                <i class="fa-brands fa-whatsapp"></i> Order on WhatsApp
+              </button>
+            </div>
+          </div>
+
+          <!-- Dress 3 -->
+          <div class="product-card" data-category="evening">
+            <div class="product-img-wrap">
+              <img
+                src="images/red_evening_gown.png"
+                alt="Red Evening Gown"
+                onerror="
+                  this.parentElement.innerHTML =
+                    '<div class=\'product-img-placeholder\'><i class=\'fa-solid fa-shirt\'></i><span>Evening Gown</span></div>'
+                "
+              />
+              <span class="product-badge hot">Hot</span>
+              <button class="product-wishlist" onclick="toggleWishlist(this)">
+                <i class="fa-regular fa-heart"></i>
+              </button>
+            </div>
+            <div class="product-info">
+              <div class="product-category">Evening</div>
+              <h3>Red Evening Gown</h3>
+              <div class="product-meta">
+                <div><span class="product-price">$120</span></div>
+                <div class="product-rating">
+                  <i class="fa-solid fa-star"></i
+                  ><i class="fa-solid fa-star"></i>
+                  <i class="fa-solid fa-star"></i
+                  ><i class="fa-solid fa-star"></i>
+                  <i class="fa-solid fa-star"></i><span>(61)</span>
+                </div>
+              </div>
+              <div class="product-sizes">
+                <span class="size-chip">XS</span>
+                <span class="size-chip">S</span>
+                <span class="size-chip active">M</span>
+                <span class="size-chip">L</span>
+              </div>
+              <button
+                class="product-btn"
+                onclick="orderOnWa('Red Evening Gown', '$120')"
+              >
+                <i class="fa-brands fa-whatsapp"></i> Order on WhatsApp
+              </button>
+            </div>
+          </div>
+
+          <!-- Dress 4 -->
+          <div class="product-card" data-category="luxury">
+            <div class="product-img-wrap">
+              <div class="product-img-placeholder">
+                <i class="fa-solid fa-shirt"></i><span>Luxury Dress</span>
+              </div>
+              <span class="product-badge sale">Sale</span>
+              <button class="product-wishlist" onclick="toggleWishlist(this)">
+                <i class="fa-regular fa-heart"></i>
+              </button>
+            </div>
+            <div class="product-info">
+              <div class="product-category">Luxury</div>
+              <h3>Ivory Luxury Dress</h3>
+              <div class="product-meta">
+                <div>
+                  <span class="product-price">$150</span>
+                  <span class="product-old-price">$180</span>
+                </div>
+                <div class="product-rating">
+                  <i class="fa-solid fa-star"></i
+                  ><i class="fa-solid fa-star"></i>
+                  <i class="fa-solid fa-star"></i
+                  ><i class="fa-solid fa-star"></i>
+                  <i class="fa-solid fa-star-half-stroke"></i><span>(19)</span>
+                </div>
+              </div>
+              <div class="product-sizes">
+                <span class="size-chip">S</span>
+                <span class="size-chip">M</span>
+                <span class="size-chip active">L</span>
+                <span class="size-chip">XL</span>
+              </div>
+              <button
+                class="product-btn"
+                onclick="orderOnWa('Ivory Luxury Dress', '$150')"
+              >
+                <i class="fa-brands fa-whatsapp"></i> Order on WhatsApp
+              </button>
+            </div>
+          </div>
+
+          <!-- Dress 5 -->
+          <div class="product-card" data-category="cocktail">
+            <div class="product-img-wrap">
+              <div class="product-img-placeholder">
+                <i class="fa-solid fa-shirt"></i><span>Cocktail Dress</span>
+              </div>
+              <span class="product-badge new">New</span>
+              <button class="product-wishlist" onclick="toggleWishlist(this)">
+                <i class="fa-regular fa-heart"></i>
+              </button>
+            </div>
+            <div class="product-info">
+              <div class="product-category">Cocktail</div>
+              <h3>Rose Gold Mini Dress</h3>
+              <div class="product-meta">
+                <div><span class="product-price">$75</span></div>
+                <div class="product-rating">
+                  <i class="fa-solid fa-star"></i
+                  ><i class="fa-solid fa-star"></i>
+                  <i class="fa-solid fa-star"></i
+                  ><i class="fa-solid fa-star"></i>
+                  <i class="fa-solid fa-star"></i><span>(14)</span>
+                </div>
+              </div>
+              <div class="product-sizes">
+                <span class="size-chip active">XS</span>
+                <span class="size-chip">S</span>
+                <span class="size-chip">M</span>
+                <span class="size-chip">L</span>
+              </div>
+              <button
+                class="product-btn"
+                onclick="orderOnWa('Rose Gold Mini Dress', '$75')"
+              >
+                <i class="fa-brands fa-whatsapp"></i> Order on WhatsApp
+              </button>
+            </div>
+          </div>
+
+          <!-- Dress 6 -->
+          <div class="product-card" data-category="summer">
+            <div class="product-img-wrap">
+              <div class="product-img-placeholder">
+                <i class="fa-solid fa-shirt"></i><span>Summer Dress</span>
+              </div>
+              <button class="product-wishlist" onclick="toggleWishlist(this)">
+                <i class="fa-regular fa-heart"></i>
+              </button>
+            </div>
+            <div class="product-info">
+              <div class="product-category">Summer</div>
+              <h3>Floral Wrap Dress</h3>
+              <div class="product-meta">
+                <div><span class="product-price">$62</span></div>
+                <div class="product-rating">
+                  <i class="fa-solid fa-star"></i
+                  ><i class="fa-solid fa-star"></i>
+                  <i class="fa-solid fa-star"></i
+                  ><i class="fa-solid fa-star"></i>
+                  <i class="fa-regular fa-star"></i><span>(33)</span>
+                </div>
+              </div>
+              <div class="product-sizes">
+                <span class="size-chip">S</span>
+                <span class="size-chip active">M</span>
+                <span class="size-chip">L</span>
+                <span class="size-chip">XL</span>
+                <span class="size-chip">XXL</span>
+              </div>
+              <button
+                class="product-btn"
+                onclick="orderOnWa('Floral Wrap Dress', '$62')"
+              >
+                <i class="fa-brands fa-whatsapp"></i> Order on WhatsApp
+              </button>
+            </div>
+          </div>
+
+          <!-- Dress 7 -->
+          <div class="product-card" data-category="evening">
+            <div class="product-img-wrap">
+              <div class="product-img-placeholder">
+                <i class="fa-solid fa-shirt"></i><span>Evening Gown</span>
+              </div>
+              <span class="product-badge">Best Seller</span>
+              <button class="product-wishlist" onclick="toggleWishlist(this)">
+                <i class="fa-regular fa-heart"></i>
+              </button>
+            </div>
+            <div class="product-info">
+              <div class="product-category">Evening</div>
+              <h3>Emerald Maxi Gown</h3>
+              <div class="product-meta">
+                <div><span class="product-price">$135</span></div>
+                <div class="product-rating">
+                  <i class="fa-solid fa-star"></i
+                  ><i class="fa-solid fa-star"></i>
+                  <i class="fa-solid fa-star"></i
+                  ><i class="fa-solid fa-star"></i>
+                  <i class="fa-solid fa-star-half-stroke"></i><span>(27)</span>
+                </div>
+              </div>
+              <div class="product-sizes">
+                <span class="size-chip">XS</span>
+                <span class="size-chip">S</span>
+                <span class="size-chip active">M</span>
+                <span class="size-chip">L</span>
+              </div>
+              <button
+                class="product-btn"
+                onclick="orderOnWa('Emerald Maxi Gown', '$135')"
+              >
+                <i class="fa-brands fa-whatsapp"></i> Order on WhatsApp
+              </button>
+            </div>
+          </div>
+
+          <!-- Dress 8 -->
+          <div class="product-card" data-category="luxury">
+            <div class="product-img-wrap">
+              <div class="product-img-placeholder">
+                <i class="fa-solid fa-shirt"></i><span>Luxury Dress</span>
+              </div>
+              <span class="product-badge new">New</span>
+              <button class="product-wishlist" onclick="toggleWishlist(this)">
+                <i class="fa-regular fa-heart"></i>
+              </button>
+            </div>
+            <div class="product-info">
+              <div class="product-category">Luxury</div>
+              <h3>Champagne Silk Dress</h3>
+              <div class="product-meta">
+                <div><span class="product-price">$199</span></div>
+                <div class="product-rating">
+                  <i class="fa-solid fa-star"></i
+                  ><i class="fa-solid fa-star"></i>
+                  <i class="fa-solid fa-star"></i
+                  ><i class="fa-solid fa-star"></i>
+                  <i class="fa-solid fa-star"></i><span>(8)</span>
+                </div>
+              </div>
+              <div class="product-sizes">
+                <span class="size-chip">S</span>
+                <span class="size-chip active">M</span>
+                <span class="size-chip">L</span>
+              </div>
+              <button
+                class="product-btn"
+                onclick="orderOnWa('Champagne Silk Dress', '$199')"
+              >
+                <i class="fa-brands fa-whatsapp"></i> Order on WhatsApp
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ══ FOOTER ══ -->
+    <footer class="site-footer">
+      <div class="footer-grid">
+        <div class="footer-brand">
+          <div class="logo-name">NoamiDress</div>
+          <p>Empowering women to dress like queens — every single day.</p>
+          <div class="footer-social">
+            <a href="#" aria-label="Instagram"
+              ><i class="fa-brands fa-instagram"></i
+            ></a>
+            <a href="#" aria-label="Facebook"
+              ><i class="fa-brands fa-facebook-f"></i
+            ></a>
+            <a href="#" aria-label="TikTok"
+              ><i class="fa-brands fa-tiktok"></i
+            ></a>
+            <a
+              href="https://wa.me/233000000000"
+              aria-label="WhatsApp"
+              target="_blank"
+              ><i class="fa-brands fa-whatsapp"></i
+            ></a>
+          </div>
+        </div>
+        <div class="footer-col">
+          <h4>Navigation</h4>
+          <ul>
+            <li><a href="../../index.html">Home</a></li>
+            <li><a href="../pages/about.html">About</a></li>
+            <li><a href="../pages/dresses.html" class="active">Dresses</a></li>
+            <li><a href="../pages/contact.html">Contact</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h4>Support</h4>
+          <ul>
+            <li><a href="contact.html">FAQ</a></li>
+            <li><a href="contact.html">Size Guide</a></li>
+            <li>
+              <a href="https://wa.me/233000000000" target="_blank"
+                >WhatsApp Us</a
+              >
+            </li>
+          </ul>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <p>&copy; 2026 NoamiDress. All rights reserved.</p>
+        <div class="footer-bottom-links">
+          <a href="#">Privacy Policy</a>
+          <a href="#">Terms of Service</a>
+        </div>
+      </div>
+    </footer>
+
+    <script src="../pages/nav.js"></script>
+    <script>
+      // ── Filter Logic ──
+      function filterDresses(category, btn) {
+        document
+          .querySelectorAll(".filter-pill")
+          .forEach((p) => p.classList.remove("active"));
+        btn.classList.add("active");
+
+        const cards = document.querySelectorAll(".product-card");
+        let visible = 0;
+        cards.forEach((card) => {
+          const show = category === "all" || card.dataset.category === category;
+          card.style.display = show ? "" : "none";
+          if (show) visible++;
+        });
+        document.getElementById("results-count").textContent = visible;
+      }
+
+      // ── Wishlist Toggle ──
+      function toggleWishlist(btn) {
+        btn.classList.toggle("liked");
+        const icon = btn.querySelector("i");
+        if (btn.classList.contains("liked")) {
+          icon.className = "fa-solid fa-heart";
+        } else {
+          icon.className = "fa-regular fa-heart";
+        }
+      }
+
+      // ── Size chip select ──
+      document.querySelectorAll(".size-chip").forEach((chip) => {
+        chip.addEventListener("click", () => {
+          const siblings = chip.parentElement.querySelectorAll(".size-chip");
+          siblings.forEach((s) => s.classList.remove("active"));
+          chip.classList.add("active");
+        });
+      });
+
+      // ── WhatsApp order ──
+      function orderOnWa(name, price) {
+        const msg = encodeURIComponent(
+          `Hi NoamiDress! I'm interested in the ${name} (${price}). Can I place an order?`,
+        );
+        window.open(`https://wa.me/233000000000?text=${msg}`, "_blank");
+      }
+    </script>
+  </body>
+</html>
