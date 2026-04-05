@@ -2,33 +2,35 @@
    BASE.CSS — Shared styles: vars, nav, footer
    ============================================ */
 
-@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;0,700;0,900;1,400;1,600&family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;0,9..40,600;1,9..40,300&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;0,700;0,900;1,400;1,600&family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;0,9..40,600;1,9..40,300&display=swap");
 
 /* ── CSS Variables ── */
 :root {
-  --rose:        #C0195A;
-  --rose-dark:   #97124A;
-  --rose-light:  #F2D4E0;
-  --gold:        #C9954A;
-  --gold-light:  #F0DFC0;
-  --cream:       #FDF6F0;
-  --blush:       #F7ECE6;
-  --ink:         #1A0A10;
-  --ink-mid:     #4A3040;
-  --ink-soft:    #7A6070;
-  --white:       #FFFFFF;
-  --shadow-sm:   0 2px 12px rgba(26,10,16,0.08);
-  --shadow-md:   0 8px 32px rgba(26,10,16,0.12);
-  --shadow-lg:   0 20px 60px rgba(26,10,16,0.18);
-  --radius-sm:   8px;
-  --radius-md:   16px;
-  --radius-lg:   32px;
-  --nav-h:       72px;
-  --transition:  0.35s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+  --rose: #c0195a;
+  --rose-dark: #97124a;
+  --rose-light: #f2d4e0;
+  --gold: #c9954a;
+  --gold-light: #f0dfc0;
+  --cream: #fdf6f0;
+  --blush: #f7ece6;
+  --ink: #1a0a10;
+  --ink-mid: #4a3040;
+  --ink-soft: #7a6070;
+  --white: #ffffff;
+  --shadow-sm: 0 2px 12px rgba(26, 10, 16, 0.08);
+  --shadow-md: 0 8px 32px rgba(26, 10, 16, 0.12);
+  --shadow-lg: 0 20px 60px rgba(26, 10, 16, 0.18);
+  --radius-sm: 8px;
+  --radius-md: 16px;
+  --radius-lg: 32px;
+  --nav-h: 72px;
+  --transition: 0.35s cubic-bezier(0.25, 0.46, 0.45, 0.94);
 }
 
 /* ── Reset ── */
-*, *::before, *::after {
+*,
+*::before,
+*::after {
   box-sizing: border-box;
   margin: 0;
   padding: 0;
@@ -39,7 +41,7 @@ html {
 }
 
 body {
-  font-family: 'DM Sans', sans-serif;
+  font-family: "DM Sans", sans-serif;
   background-color: var(--cream);
   color: var(--ink);
   line-height: 1.6;
@@ -61,10 +63,15 @@ ul {
 }
 
 /* ── Typography Helpers ── */
-.serif { font-family: 'Playfair Display', serif; }
+.serif {
+  font-family: "Playfair Display", serif;
+}
 
-h1, h2, h3, h4 {
-  font-family: 'Playfair Display', serif;
+h1,
+h2,
+h3,
+h4 {
+  font-family: "Playfair Display", serif;
   line-height: 1.15;
   color: var(--ink);
 }
@@ -115,7 +122,7 @@ h1, h2, h3, h4 {
 }
 
 .nav-logo-name {
-  font-family: 'Playfair Display', serif;
+  font-family: "Playfair Display", serif;
   font-size: 1.55rem;
   font-weight: 700;
   color: var(--rose);
@@ -148,7 +155,7 @@ h1, h2, h3, h4 {
 }
 
 .nav-links a::after {
-  content: '';
+  content: "";
   position: absolute;
   bottom: -4px;
   left: 0;
@@ -175,10 +182,14 @@ h1, h2, h3, h4 {
   padding: 10px 22px;
   border-radius: var(--radius-lg);
   letter-spacing: 0.05em !important;
-  transition: background var(--transition), transform var(--transition) !important;
+  transition:
+    background var(--transition),
+    transform var(--transition) !important;
 }
 
-.nav-cta::after { display: none !important; }
+.nav-cta::after {
+  display: none !important;
+}
 
 .nav-cta:hover {
   background: var(--rose-dark) !important;
@@ -211,7 +222,9 @@ h1, h2, h3, h4 {
   height: 2px;
   background: var(--ink);
   border-radius: 2px;
-  transition: transform var(--transition), opacity var(--transition);
+  transition:
+    transform var(--transition),
+    opacity var(--transition);
   transform-origin: center;
 }
 
@@ -243,7 +256,9 @@ h1, h2, h3, h4 {
   transform: translateY(-110%);
   opacity: 0;
   pointer-events: none;
-  transition: transform 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94), opacity 0.3s ease;
+  transition:
+    transform 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94),
+    opacity 0.3s ease;
 }
 
 .nav-mobile-drawer.open {
@@ -255,12 +270,14 @@ h1, h2, h3, h4 {
 .nav-mobile-drawer a {
   display: block;
   font-size: 1.3rem;
-  font-family: 'Playfair Display', serif;
+  font-family: "Playfair Display", serif;
   font-weight: 600;
   color: var(--ink);
   padding: 14px 0;
   border-bottom: 1px solid var(--blush);
-  transition: color var(--transition), padding-left var(--transition);
+  transition:
+    color var(--transition),
+    padding-left var(--transition);
 }
 
 .nav-mobile-drawer a:hover,
@@ -294,7 +311,7 @@ h1, h2, h3, h4 {
 ══════════════════════════════════════════ */
 .site-footer {
   background: var(--ink);
-  color: rgba(255,255,255,0.75);
+  color: rgba(255, 255, 255, 0.75);
   padding: 80px 0 0;
   margin-top: 0;
 }
@@ -309,7 +326,7 @@ h1, h2, h3, h4 {
 }
 
 .footer-brand .logo-name {
-  font-family: 'Playfair Display', serif;
+  font-family: "Playfair Display", serif;
   font-size: 1.8rem;
   color: var(--white);
   margin-bottom: 12px;
@@ -319,7 +336,7 @@ h1, h2, h3, h4 {
   font-size: 0.95rem;
   line-height: 1.7;
   max-width: 260px;
-  color: rgba(255,255,255,0.6);
+  color: rgba(255, 255, 255, 0.6);
 }
 
 .footer-social {
@@ -332,11 +349,11 @@ h1, h2, h3, h4 {
   width: 38px;
   height: 38px;
   border-radius: 50%;
-  border: 1px solid rgba(255,255,255,0.15);
+  border: 1px solid rgba(255, 255, 255, 0.15);
   display: flex;
   align-items: center;
   justify-content: center;
-  color: rgba(255,255,255,0.6);
+  color: rgba(255, 255, 255, 0.6);
   font-size: 0.9rem;
   transition: all var(--transition);
 }
@@ -349,7 +366,7 @@ h1, h2, h3, h4 {
 }
 
 .footer-col h4 {
-  font-family: 'DM Sans', sans-serif;
+  font-family: "DM Sans", sans-serif;
   font-size: 0.75rem;
   font-weight: 600;
   letter-spacing: 0.15em;
@@ -366,7 +383,7 @@ h1, h2, h3, h4 {
 
 .footer-col ul li a {
   font-size: 0.92rem;
-  color: rgba(255,255,255,0.6);
+  color: rgba(255, 255, 255, 0.6);
   transition: color var(--transition);
 }
 
@@ -375,7 +392,7 @@ h1, h2, h3, h4 {
 }
 
 .footer-bottom {
-  border-top: 1px solid rgba(255,255,255,0.08);
+  border-top: 1px solid rgba(255, 255, 255, 0.08);
   max-width: 1200px;
   margin: 0 auto;
   padding: 20px 24px;
@@ -388,7 +405,7 @@ h1, h2, h3, h4 {
 
 .footer-bottom p {
   font-size: 0.82rem;
-  color: rgba(255,255,255,0.35);
+  color: rgba(255, 255, 255, 0.35);
 }
 
 .footer-bottom-links {
@@ -398,12 +415,12 @@ h1, h2, h3, h4 {
 
 .footer-bottom-links a {
   font-size: 0.82rem;
-  color: rgba(255,255,255,0.35);
+  color: rgba(255, 255, 255, 0.35);
   transition: color var(--transition);
 }
 
 .footer-bottom-links a:hover {
-  color: rgba(255,255,255,0.7);
+  color: rgba(255, 255, 255, 0.7);
 }
 
 /* ── Utility Classes ── */
@@ -414,7 +431,7 @@ h1, h2, h3, h4 {
   padding: 14px 32px;
   background: var(--rose);
   color: var(--white);
-  font-family: 'DM Sans', sans-serif;
+  font-family: "DM Sans", sans-serif;
   font-size: 0.9rem;
   font-weight: 600;
   letter-spacing: 0.05em;
@@ -428,7 +445,7 @@ h1, h2, h3, h4 {
   background: var(--rose-dark);
   border-color: var(--rose-dark);
   transform: translateY(-3px);
-  box-shadow: 0 12px 30px rgba(192,25,90,0.35);
+  box-shadow: 0 12px 30px rgba(192, 25, 90, 0.35);
 }
 
 .btn-outline {
@@ -438,7 +455,7 @@ h1, h2, h3, h4 {
   padding: 14px 32px;
   background: transparent;
   color: var(--rose);
-  font-family: 'DM Sans', sans-serif;
+  font-family: "DM Sans", sans-serif;
   font-size: 0.9rem;
   font-weight: 600;
   letter-spacing: 0.05em;
@@ -452,7 +469,7 @@ h1, h2, h3, h4 {
   background: var(--rose);
   color: var(--white);
   transform: translateY(-3px);
-  box-shadow: 0 12px 30px rgba(192,25,90,0.3);
+  box-shadow: 0 12px 30px rgba(192, 25, 90, 0.3);
 }
 
 .tag {
@@ -465,6 +482,29 @@ h1, h2, h3, h4 {
   background: var(--rose-light);
   padding: 6px 14px;
   border-radius: var(--radius-lg);
+}
+
+.footer-credits {
+  border-top: 1px solid rgba(255, 255, 255, 0.08);
+  display: flex;
+  justify-content: center;
+  align-items: left;
+  flex-direction: column;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 20px 24px;
+}
+.credits-title {
+  font-size: 0.85rem;
+}
+
+.credits-people {
+  padding: 10px 28px;
+}
+
+.credits-people .author {
+  font-size: 0.75rem;
+  color: rgba(255, 255, 255, 0.6);
 }
 
 /* ── Responsive nav ── */
